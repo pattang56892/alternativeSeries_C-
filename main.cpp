@@ -8,9 +8,6 @@
  *
  * This project demonstrates 7 different approaches to solving
  * the same mathematical problem, showcasing various C++ techniques.
- *
- * Author: Patrick Tang (pattang56892)
- * GitHub: https://github.com/pattang56892/alternativeSeries_C-
  */
 
 #include <iostream>
@@ -26,6 +23,12 @@
 #include "method4_recursive.h"
 #include "method5_precisionTest.h"
 #include "method6_kahan.h"
+
+#include "method6_kahan.h"
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 using namespace std;
 
@@ -275,6 +278,20 @@ void runAllMethods() {
 }
 
 int main() {
+    
+    // Enable ANSI/VT100 terminal on Windows 10+
+    
+    #ifdef _WIN32
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode = 0;
+    GetConsoleMode(hOut, &dwMode);
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
+
+    // Set console to UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    #endif
+    
     printHeader();
 
     int choice;
