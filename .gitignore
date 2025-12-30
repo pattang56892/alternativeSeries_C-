@@ -52,3 +52,8 @@ desktop.ini
 ~$*
 *.tmp
 *.temp
+
+# Private documentation (DO NOT PUSH TO GITHUB)
+PRIVATE_NOTES.md
+*PRIVATE*
+*.private.md
