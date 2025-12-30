@@ -61,4 +61,36 @@ double calculateKahan() {
      * Best for: Maximum numerical accuracy when precision is critical
      * Trade-off: Slightly slower (more operations), but significantly more accurate
      */
+
+    /*
+     * 方法 6：Kahan 求和算法（精度专家方法）
+     *
+     * 发明者：William Kahan（1965 年），图灵奖得主（1989 年）
+     * 又称：补偿求和
+     *
+     * 解决的问题：
+     *   当累加多个浮点数时，由于精度有限，小值会"丢失"。
+     *   标准求和会累积舍入误差。
+     *
+     * Kahan 算法工作原理：
+     *   1. 维护一个"补偿"变量，跟踪丢失的低位
+     *   2. 在添加每项之前，用补偿调整该项
+     *   3. 添加后，计算丢失的部分（新补偿）
+     *   4. 将补偿应用到下一项
+     *
+     * 算法步骤（每次迭代）：
+     *   adjustedTerm = term - compensation    // 补偿先前的损失
+     *   tempSum = sum + adjustedTerm          // 相加（会损失精度）
+     *   compensation = (tempSum - sum) - adjustedTerm  // 捕获损失的部分
+     *   sum = tempSum                         // 更新总和
+     *
+     * 时间复杂度：O(n) - 与朴素方法相同，但每项约 4 倍操作
+     * 空间复杂度：O(1) - 仅一个额外的补偿变量
+     *
+     * 精度提升：将舍入误差减少一个数量级
+     * 应用领域：科学计算、金融计算、NASA、计算机图形学
+     *
+     * 适用场景：需要最大数值精度的关键应用
+     * 权衡：稍慢（更多操作），但精度显著提高
+     */
 }

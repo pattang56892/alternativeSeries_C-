@@ -40,4 +40,29 @@ double calculateRecursive() {
      * Trade-off: Stack overhead, risk of stack overflow for very large n
      * Warning: Not suitable for n > ~10,000 (typical stack limit)
      */
+
+    /*
+     * 方法 4：递归函数法（教学方法）
+     *
+     * 传统递归：
+     *   - 使用函数调用栈代替循环
+     *   - 每次调用处理一项，然后调用 n-1
+     *   - 展示经典递归模式
+     *
+     * 调用栈深度：100 层（从 recursiveSum(100) 到 recursiveSum(0)）
+     *
+     * 算法流程：
+     *   recursiveSum(100) -> 计算 1/100 + recursiveSum(99)
+     *   recursiveSum(99)  -> 计算 -1/99 + recursiveSum(98)
+     *   ...
+     *   recursiveSum(1)   -> 计算 1/1 + recursiveSum(0)
+     *   recursiveSum(0)   -> 返回 0.0（基础情况）
+     *
+     * 时间复杂度：O(n)，其中 n = 100
+     * 空间复杂度：O(n) - 调用栈深度 100
+     *
+     * 适用场景：理解递归，教学目的
+     * 权衡：栈开销，n 很大时有栈溢出风险
+     * 警告：不适用于 n > 约 10,000（典型栈限制）
+     */
 }

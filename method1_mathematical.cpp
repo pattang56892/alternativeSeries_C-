@@ -29,4 +29,23 @@ double calculateMathematical() {
      * Best for: Performance optimization, demonstrating mathematical insight
      * Trade-off: Fastest iterative method, but requires understanding harmonic series
      */
+
+    /*
+     * 方法 1：数学优化法（数学家方法）
+     *
+     * 数学原理：
+     *   1 - 1/2 + 1/3 - 1/4 + ... = (1 + 1/2 + ... + 1/100) - 2(1/2 + 1/4 + ... + 1/100)
+     *   利用调和数性质：S = H_100 - H_50
+     *   简化为：1/51 + 1/52 + ... + 1/100
+     *
+     * 算法：从 51 到 100 的简单求和（仅正项）
+     * 迭代次数：50 次（相比方法 0 减少 50%！）
+     * 时间复杂度：O(n/2)，其中 n = 100
+     * 空间复杂度：O(1) - 内存使用最小
+     *
+     * 结果：约 0.688172179310195（与其他方法完全相同）
+     *
+     * 适用场景：性能优化，展示数学洞察力
+     * 权衡：迭代速度最快，但需要理解调和级数
+     */
 }

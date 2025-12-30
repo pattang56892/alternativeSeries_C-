@@ -66,4 +66,29 @@ void PrecisionResults::display() const {
      * Educational Value: Understanding why precision matters in numerical computing
      * Best for: Demonstrating floating-point arithmetic limitations
      */
+
+    /*
+     * 方法 5：精度测试套件（分析师方法）
+     *
+     * 目的：演示浮点精度差异
+     *
+     * 浮点类型对比：
+     *   - float:       32 位（23 位尾数，约 7 位十进制精度）
+     *   - double:      64 位（52 位尾数，约 15-17 位十进制精度）
+     *   - long double: 80 位（64 位尾数，x86 上约 19-21 位十进制精度）
+     *
+     * 展示内容：
+     *   1. float 与 double 的累积舍入误差
+     *   2. 为什么 double 是科学计算的标准
+     *   3. long double 的边际收益（平台相关）
+     *   4. 迭代计算中的误差传播
+     *
+     * 典型结果：
+     *   - float:  约 0.6881722（第 7 位左右开始失去精度）
+     *   - double: 约 0.688172179310195（精确到 15-17 位）
+     *   - long double: 与 double 类似（略有改进）
+     *
+     * 教育价值：理解为什么精度在数值计算中很重要
+     * 适用场景：演示浮点运算的局限性
+     */
 }

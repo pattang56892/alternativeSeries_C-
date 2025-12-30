@@ -30,4 +30,19 @@ double calculateSignToggle() {
      * Best for: Readability, learning basic loop patterns
      * Trade-off: Straightforward but requires full 100 iterations
      */
+
+    /*
+     * 方法 0：符号切换法
+     *
+     * 算法：使用一个简单的符号变量在 +1 和 -1 之间交替
+     * 迭代次数：100 次（级数中的每一项对应一次）
+     * 时间复杂度：O(n)，其中 n = 100
+     * 空间复杂度：O(1) - 仅使用两个变量
+     *
+     * 计算：1 - 1/2 + 1/3 - 1/4 + ... + 1/99 - 1/100
+     * 结果：约 0.688172179310195
+     *
+     * 适用场景：代码可读性强，适合学习基本循环模式
+     * 权衡：实现直观但需要完整的 100 次迭代
+     */
 }
