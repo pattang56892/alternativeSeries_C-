@@ -29,4 +29,36 @@ double calculateKahan() {
     }
 
     return sum;
+
+    /*
+     * METHOD 6: Kahan Summation Algorithm (The Precision Expert)
+     *
+     * Invented by: William Kahan (1965), Turing Award Winner (1989)
+     * Also known as: Compensated summation
+     *
+     * Problem Solved:
+     *   When adding many floating-point numbers, small values get "lost"
+     *   due to limited precision. Standard summation accumulates rounding errors.
+     *
+     * How Kahan Algorithm Works:
+     *   1. Maintain a "compensation" variable tracking lost low-order bits
+     *   2. Before adding each term, adjust it by the compensation
+     *   3. After addition, calculate what was lost (new compensation)
+     *   4. Apply compensation to next term
+     *
+     * Algorithm Steps (per iteration):
+     *   adjustedTerm = term - compensation    // Compensate for previous loss
+     *   tempSum = sum + adjustedTerm          // Add (loses precision)
+     *   compensation = (tempSum - sum) - adjustedTerm  // Capture what was lost
+     *   sum = tempSum                         // Update sum
+     *
+     * Time Complexity: O(n) - same as naive, but ~4x more operations per term
+     * Space Complexity: O(1) - just one extra compensation variable
+     *
+     * Accuracy Improvement: Reduces rounding error by order of magnitude
+     * Used in: Scientific computing, financial calculations, NASA, computer graphics
+     *
+     * Best for: Maximum numerical accuracy when precision is critical
+     * Trade-off: Slightly slower (more operations), but significantly more accurate
+     */
 }

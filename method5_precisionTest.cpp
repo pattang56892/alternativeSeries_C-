@@ -41,4 +41,29 @@ void PrecisionResults::display() const {
     std::cout << "float vs double error:  " << floatError << "\n";
     std::cout << "long double gain:       " << static_cast<double>(longDoubleGain) << "\n";
     std::cout << "===========================\n";
+
+    /*
+     * METHOD 5: Precision Testing Suite (The Analyst)
+     *
+     * Purpose: Demonstrates floating-point precision differences
+     *
+     * Floating-Point Types Compared:
+     *   - float:       32-bit (23-bit mantissa, ~7 decimal digits precision)
+     *   - double:      64-bit (52-bit mantissa, ~15-17 decimal digits)
+     *   - long double: 80-bit (64-bit mantissa, ~19-21 decimal digits on x86)
+     *
+     * What This Shows:
+     *   1. Cumulative rounding errors in float vs double
+     *   2. Why double is the standard for scientific computing
+     *   3. Marginal gains from long double (platform-dependent)
+     *   4. Error propagation in iterative calculations
+     *
+     * Typical Results:
+     *   - float:  ~0.6881722 (loses precision around 7th digit)
+     *   - double: ~0.688172179310195 (accurate to 15-17 digits)
+     *   - long double: Similar to double (slight improvement)
+     *
+     * Educational Value: Understanding why precision matters in numerical computing
+     * Best for: Demonstrating floating-point arithmetic limitations
+     */
 }
